@@ -1,5 +1,10 @@
-import re
+# rules.py
+
+STATUS_MAP = {
+    "tired": {"msg": "疲惫"},
+    "focus": {"msg": "专注"},
+}
 
 def is_valid_status(status: str) -> bool:
-    # 只允许：英文字母（你现在用的就是 tired / ghost / focus)
-    return bool(re.fullmatch(r"[a-zA-Z]+", status))
+    # 规则：只允许英文字母（你现在的 232421 / @#% 就会被判 400）
+    return status.isalpha()

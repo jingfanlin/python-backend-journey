@@ -1,17 +1,10 @@
-from rules import is_valid_status
-
-STATUS_MAP = {
-    "tired": {"msg": "疲惫"},
-    "focus": {"msg": "高度专注"},
-    "good": {"msg": "状态不错"},
-}
+# logic.py
+from rules import STATUS_MAP, is_valid_status
 
 class InvalidStatusError(Exception):
-    """参数格式不合法（400）"""
     pass
 
 class StatusNotFoundError(Exception):
-    """资源不存在（404）"""
     pass
 
 def get_status_info(status: str) -> dict:
